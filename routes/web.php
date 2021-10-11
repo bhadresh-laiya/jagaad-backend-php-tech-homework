@@ -15,3 +15,5 @@ Auth::routes();
 Route::get('/', function () {
     return redirect(route('home'), 301);
 })->name('index');
+
+Route::get('/home', 'HomeController@index')->name('home');
