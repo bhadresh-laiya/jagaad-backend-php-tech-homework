@@ -2,7 +2,7 @@
 
 namespace App\External\Musement;
 
-require_once app_path('External/Weatherapi/vendor/autoload.php');
+require_once app_path('External/Weatherapicom/vendor/autoload.php');
 
 use App\City;
 use GuzzleHttp\Client;
@@ -16,9 +16,10 @@ class MusementApi
     private $client;
 
     /**
-     * @var string
+     * @var string 99ca6caa3f784572a6a112303211110
      */
-    private $apiKey;
+    private $apiKey; 
+    // My original API key which are already set into .env file
 
     /**
      * MusementApi constructor.
