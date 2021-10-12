@@ -1,5 +1,5 @@
 # Jagaad Backend PHP tech homework
-Backend PHP tech homework - Jagaad | Developed by **[Bhadresh Laiya](blaiya18@gmail.com)**
+Backend PHP tech homework - Jagaad | Developed by **[Bhadresh Laiya](mailto:blaiya18@gmail.com)**
 
 ## Deploy the app
 
@@ -38,6 +38,8 @@ Processed city Barcelona - Spain | Sunny - Sunny
 ...
 ...
 ```
+
+If you need any help/support while deploying application, then let me know I will help you with installation. 
 
 ## Step 2 | API design (no code required)
 
