@@ -2,12 +2,11 @@
 
 namespace App\External\Musement;
 
-require_once "../vendor/autoload.php";
+require_once app_path('External/Weatherapi/vendor/autoload.php');
 
 use App\City;
 use GuzzleHttp\Client;
 use Illuminate\Support\Facades\DB;
-use WeatherAPILib;
 
 class MusementApi
 {
@@ -50,17 +49,14 @@ class MusementApi
             if(empty($cityDb)){
                 continue;
             }
-            $weatherMuseAPI = new WeatherAPILib\WeatherAPIClient($this->apiKey);
+            $weatherMuseAPI = new \WeatherAPILib\WeatherAPIClient($this->apiKey);
             $aPIs = $weatherMuseAPI->getAPIs();
 
-            $result = $aPIs->getForecastWeather($cityDb->coord_lat.','.$cityDb->coord_lon, '2');
-
-            echo "<pre>"; print_r($result); exit;
-
+            $weatherData = $aPIs->getForecastWeather($cityDb->coord_lat.','.$cityDb->coord_lon, '2');
 
             $count++;
             /**
-             * Open weather limit call 60 per minutes
+             * weather limit call 60 per minutes
              */
             if(($count % 60) === 0){
                 sleep(60);
@@ -69,8 +65,8 @@ class MusementApi
                 'name' => $city->name,
                 'country' => $city->country->name,
                 'weather' => [
-                    ucfirst($openWeatherdata->daily[0]->weather[0]->description),
-                    ucfirst($openWeatherdata->daily[1]->weather[0]->description)
+                    ucfirst($weatherData->forecast->forecastday[0]->day->condition->text),
+                    ucfirst($weatherData->forecast->forecastday[1]->day->condition->text)
                 ]
             ];
         }

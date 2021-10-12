@@ -17,3 +17,4 @@ Route::get('/', function () {
 })->name('index');
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/cities-weather', 'MusementController@getAllCitiesWeather')->name('cities-weather');

@@ -4,8 +4,6 @@ namespace App\Http\Controllers;
 
 use App\City;
 use App\External\Musement\MusementApi;
-use App\External\OpenWeather\OpenWeather;
-use App\Repositories\CityRepository;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
@@ -29,12 +27,13 @@ class MusementController extends Controller
      * @return \Illuminate\Http\JsonResponse
      */
     public function getAllCitiesWeather(){
-        $response = [];
+        // $response = [];
         foreach ($this->musementApi->getCities() as $city){
-            array_push($response, [
-                'Processed city '.$city['name'].' - '.$city['country'].' | '.implode(' - ', $city['weather'])
-            ]);
+            // array_push($response, [
+            //     'Processed city '.$city['name'].' - '.$city['country'].' | '.implode(' - ', $city['weather'])
+            // ]);
+            echo 'Processed city '.$city['name'].' - '.$city['country'].' | '.implode(' - ', $city['weather']).'<br>';
         }
-        return response()->json($response, Response::HTTP_OK);
+        // return response()->json($response, Response::HTTP_OK);
     }
 }
