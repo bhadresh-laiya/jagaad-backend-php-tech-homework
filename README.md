@@ -1,15 +1,15 @@
 # Jagaad Backend PHP tech homework
-Backend PHP tech homework - Jagaad | Developed by Bhadresh Laiya
+Backend PHP tech homework - Jagaad | Developed by **[Bhadresh Laiya](blaiya18@gmail.com)**
 
 ## Deploy the app
 
 I have created this application using [`Laravel v5.7`](https://laravel.com/docs/5.7)
 
-1. Clone de repository: `https://github.com/bhadresh-laiya/jagaad-backend-php-tech-homework.git`
-2. Install composer dependencies: `composer install`
+1. Clone the repository: `https://github.com/bhadresh-laiya/jagaad-backend-php-tech-homework.git`
+2. Install composer dependencies using: `composer install`
 3. Create or rename the .env file: `cp .env.example .env` or use existing one which are with/in repository.
 4. Create the data base: `php artisan db:create`
-5. Generate the migrations: `php artisan migrate`
+5. Run the migrations: `php artisan migrate`
 6. Seed the database: `php artisan db:seed`
 7. Set up or copy paste below two lines into `.env` file if not exists or configure.
 
@@ -26,7 +26,7 @@ Run the application using `php artisan serve` at `http://localhost:8000` or with
 ```
 GET http://localhost:8000/cities-weather
 ```
-With this endpoint you can get two days of forecast for the cities found on the [musement](https://www.musement.com/) website using [`forecast.json`](http://api.weatherapi.com/v1/forecast.json?key=[your-key]&q=[lat],[long]&days=2).
+With this endpoint you can get two days of forecast for the cities found on the [musement](https://www.musement.com/) website using [`forecast.json`](http://api.weatherapi.com/v1/forecast.json?key=[your-key]&q=[lat],[long]&days=2) as per your suggestion.
 
 Result / print to STDOUT will be:
 ```
